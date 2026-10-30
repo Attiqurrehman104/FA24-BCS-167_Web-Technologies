@@ -53,11 +53,33 @@
     <section class="container py-5" id="products">
       <h2 class="section-title">New Arrivals</h2>
 
+      <!-- Task 1: CSS-only category filter (radios must be siblings placed BEFORE the grid) -->
+      <input type="radio" name="category" id="f-all" class="filter-radio visually-hidden" checked>
+      <input type="radio" name="category" id="f-anc" class="filter-radio visually-hidden">
+      <input type="radio" name="category" id="f-wireless" class="filter-radio visually-hidden">
+      <input type="radio" name="category" id="f-openear" class="filter-radio visually-hidden">
+      <input type="radio" name="category" id="f-headphones" class="filter-radio visually-hidden">
+
+      <div class="filter-bar" role="group" aria-label="Filter by category">
+        <label for="f-all">All</label>
+        <label for="f-anc">ANC Earbuds</label>
+        <label for="f-wireless">Wireless Earbuds</label>
+        <label for="f-openear">Open-Ear</label>
+        <label for="f-headphones">Headphones</label>
+      </div>
+
+      <!-- Task 3: live search + sort (script.js) -->
+      <div class="toolbar d-flex flex-wrap gap-2 mb-3">
+        <input type="search" id="search-box" class="form-control search-box" placeholder="Search products..." aria-label="Search products">
+        <button type="button" id="sort-btn" class="btn btn-brand">Sort by price</button>
+      </div>
+
+
       
-      <div class="row g-3">
+      <div class="row g-3" id="product-grid">
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="openear">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -72,7 +94,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="wireless">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -87,7 +109,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="anc">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -102,7 +124,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="anc">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -117,7 +139,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="anc">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -132,7 +154,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="anc">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -147,7 +169,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="headphones">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -162,7 +184,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="wireless">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -177,7 +199,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="openear">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -192,7 +214,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="openear">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -207,7 +229,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="anc">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -222,7 +244,7 @@
         </div>
 
         
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-category="headphones">
           <article class="product-card h-100 d-flex flex-column">
             <span class="sale-badge">Sale</span>
             <img class="product-img"
@@ -237,6 +259,7 @@
         </div>
 
       </div>
+      <p id="no-results" class="no-results d-none" role="status">No products found</p>
     </section>
 
     
@@ -306,5 +329,6 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
