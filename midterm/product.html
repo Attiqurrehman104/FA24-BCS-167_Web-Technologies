@@ -8,7 +8,7 @@
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -59,10 +59,10 @@
       </ol>
     </nav>
 
-    <article class="row g-4 g-lg-5">
+    <article class="product-layout">
 
-      
-      <div class="col-12 col-md-6">
+      <!-- grid area: image -->
+      <div class="pd-image">
         <figure class="mb-3">
           <img class="detail-main-img"
                src="https://soundpeats.pk/cdn/shop/files/1_04e10e9e-45b0-4934-b1a5-c80cf880b9e9.png?v=1769179426&width=533"
@@ -71,20 +71,16 @@
         </figure>
         <div class="row g-2">
           <div class="col-4">
-            <img class="detail-thumb"
-                 src="https://soundpeats.pk/cdn/shop/files/1_04e10e9e-45b0-4934-b1a5-c80cf880b9e9.png?v=1769179426&width=533"
-                 alt="Air5 Pro+ thumbnail 1">
+            <img class="detail-thumb" src="https://soundpeats.pk/cdn/shop/files/1_04e10e9e-45b0-4934-b1a5-c80cf880b9e9.png?v=1769179426&width=533" alt="Air5 Pro+ thumbnail 1">
           </div>
           <div class="col-4">
-            <img class="detail-thumb"
-                 src="https://soundpeats.pk/cdn/shop/files/2_903819d8-05f7-4de6-9aaa-bee5474eb49e.png?v=1769185120&width=533"
-                 alt="Air5 Pro+ thumbnail 2">
+            <img class="detail-thumb" src="https://soundpeats.pk/cdn/shop/files/2_903819d8-05f7-4de6-9aaa-bee5474eb49e.png?v=1769185120&width=533" alt="Air5 Pro+ thumbnail 2">
           </div>
         </div>
       </div>
 
-      
-      <div class="col-12 col-md-6">
+      <!-- grid area: details (sticky from BP up) -->
+      <div class="pd-details">
         <span class="badge text-bg-danger mb-2">Sale</span>
         <h1 class="detail-title">Soundpeats Air5 Pro+ Hybrid ANC Earbuds</h1>
 
@@ -93,22 +89,7 @@
           <span class="detail-price-old">Rs.24,500</span>
         </p>
 
-        <p>
-          Wireless earbuds with hybrid active noise cancellation, sold by the authentic SoundPEATS seller in Pakistan.
-          Built for everyday listening, calls and commuting, with touch controls and a comfortable fit.
-        </p>
-
-        <h2 class="h6 fw-bold mt-4">Highlights</h2>
-        <ul class="feature-list">
-          <li>Hybrid ANC (active noise cancellation)</li>
-          <li>Wireless Bluetooth earbuds with touch controls</li>
-          <li>100% genuine product from an authentic seller</li>
-          <li>Free shipping on orders above Rs.9,999</li>
-          <li>Delivery in 2&ndash;4 working days; pay by bank transfer or COD</li>
-        </ul>
-
-       
-        <form class="row g-3 align-items-end mt-3" action="#" method="post">
+        <form class="row g-3 align-items-end" action="#" method="post">
           <div class="col-auto">
             <label for="quantity" class="form-label fw-semibold mb-1">Quantity</label>
             <input type="number" id="quantity" name="quantity" class="form-control qty-input"
@@ -119,6 +100,68 @@
           </div>
         </form>
       </div>
+
+      <!-- grid area: description (full width underneath from BP up) -->
+      <section class="pd-description" aria-labelledby="desc-title">
+        <h2 id="desc-title" class="h4 fw-bold">Description</h2>
+        <p>
+          Wireless earbuds with hybrid active noise cancellation, sold by the authentic SoundPEATS seller in Pakistan.
+          Built for everyday listening, calls and commuting, with touch controls and a comfortable fit.
+        </p>
+        <p>
+          Hybrid noise cancellation is designed to reduce the steady background sounds you meet every day: the hum of a
+          bus engine, an air conditioner in a lecture hall, or the traffic outside your window. With less noise in the
+          way, you can keep the volume lower and still hear the detail in your music, podcasts and lectures.
+        </p>
+        <p>
+          The earbuds use touch controls, so you can play, pause, skip tracks and answer calls without reaching for your
+          phone. They connect wirelessly over Bluetooth and come with a charging case that you can slip into a pocket or
+          a bag.
+        </p>
+        <p>
+          Comfort matters when you wear earbuds for hours. The shape is made to sit securely in the ear, and the pack
+          includes ear tips so you can look for the size that suits you best. A good fit also improves both noise
+          cancellation and bass, so it is worth trying each size.
+        </p>
+        <p>
+          For calls and online classes, the built-in microphones are there to pick up your voice clearly, so the person
+          on the other end can hear you even when you are outside or on the move.
+        </p>
+
+        <h3 class="h6 fw-bold mt-4">Highlights</h3>
+        <ul class="feature-list">
+          <li>Hybrid ANC (active noise cancellation)</li>
+          <li>Wireless Bluetooth earbuds with touch controls</li>
+          <li>100% genuine product from an authentic seller</li>
+          <li>Free shipping on orders above Rs.9,999</li>
+          <li>Delivery in 2&ndash;4 working days; pay by bank transfer or COD</li>
+        </ul>
+
+        <h3 class="h6 fw-bold mt-4">Who is it for?</h3>
+        <p>
+          Students who study in noisy places, commuters who want a quieter ride, and anyone who wants a dependable pair of
+          wireless earbuds for music, calls and video without paying flagship prices.
+        </p>
+
+        <h3 class="h6 fw-bold mt-4">Delivery and payment</h3>
+        <p>
+          Orders are delivered in 2&ndash;4 working days. Shipping is free above Rs.9,999, and you can pay by bank
+          transfer or cash on delivery. Support is available Monday to Friday, 11:30 AM to 6:00 PM.
+        </p>
+
+        <h3 class="h6 fw-bold mt-4">Warranty and authenticity</h3>
+        <p>
+          Every product is sold by an authentic seller of SoundPEATS audio products in Pakistan. Keep your order receipt
+          so that you can claim warranty support if you ever need it. Please read the warranty policy in the footer for
+          the exact terms.
+        </p>
+
+        <h3 class="h6 fw-bold mt-4">In the box</h3>
+        <p>
+          Earbuds, charging case, charging cable, extra ear tips and a quick-start guide. Contents can vary slightly, so
+          check the product listing before you order.
+        </p>
+      </section>
     </article>
   </main>
 
