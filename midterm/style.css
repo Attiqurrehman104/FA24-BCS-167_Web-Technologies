@@ -8,6 +8,7 @@
   --color-bg: #f8f9fa;
   --radius-md: 0.75rem;
   --space-md: 1rem;
+   --accent-h: hsl(109, 70%, 45%);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -308,4 +309,54 @@ a { color: inherit; }
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-bar label {
+  cursor: pointer;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-bar label:hover { border-color: var(--accent-h); }
+
+
+#f-all:checked        ~ .filter-bar label[for="f-all"],
+#f-anc:checked        ~ .filter-bar label[for="f-anc"],
+#f-wireless:checked   ~ .filter-bar label[for="f-wireless"],
+#f-openear:checked    ~ .filter-bar label[for="f-openear"],
+#f-headphones:checked ~ .filter-bar label[for="f-headphones"] {
+  background-color: var(--accent-h);
+  border-color: var(--accent-h);
+  color: #fff;
+}
+
+
+#f-all:focus-visible        ~ .filter-bar label[for="f-all"],
+#f-anc:focus-visible        ~ .filter-bar label[for="f-anc"],
+#f-wireless:focus-visible   ~ .filter-bar label[for="f-wireless"],
+#f-openear:focus-visible    ~ .filter-bar label[for="f-openear"],
+#f-headphones:focus-visible ~ .filter-bar label[for="f-headphones"] {
+  outline: 3px solid #8ec5ff;
+  outline-offset: 3px;
+}
+
+
+#f-anc:checked        ~ #product-grid .product-item:not([data-category="anc"]),
+#f-wireless:checked   ~ #product-grid .product-item:not([data-category="wireless"]),
+#f-openear:checked    ~ #product-grid .product-item:not([data-category="openear"]),
+#f-headphones:checked ~ #product-grid .product-item:not([data-category="headphones"]) {
+  display: none;
 }
